@@ -1,12 +1,16 @@
+/* CSS Utama */
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-    margin: 0;
     font-family: "Quicksand", sans-serif;
     background-color: #fce4ec;
     text-align: center;
+    margin: 0;
+    padding: 0;
 }
 
 .instruction {
@@ -48,16 +52,18 @@ body {
 
 .message {
     display: none;
-    position: absolute;
-    top: 50%;
+    position: fixed;
+    top: 5vh;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, 0);
     width: 80%;
     max-width: 400px;
     background: white;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    max-height: 75vh;
+    overflow-y: auto;
 }
 
 .close-btn {
@@ -69,31 +75,33 @@ body {
     cursor: pointer;
     border-radius: 5px;
     font-size: 16px;
+    width: 100%;
 }
+
+/* Optimasi Tampilan Mobile */
 @media screen and (max-width: 768px) {
+    .container {
+        overflow: visible !important;
+    }
+
     .message {
+        position: fixed;
+        top: 5vh;
+        left: 50%;
+        transform: translate(-50%, 0);
         width: 90%;
-        max-width: 90vw;
-        font-size: clamp(14px, 4vw, 16px); /* Biar font nggak terlalu kecil */
+        max-height: 75vh;
+        overflow-y: auto;
         padding: 15px;
     }
 
     .heart img {
-        width: 60px; /* Biar lebih enak dilihat di layar kecil */
+        width: 60px;
     }
 
     .close-btn {
         width: 100%;
         padding: 12px;
         font-size: 16px;
-    }
-}
-@media screen and (max-width: 768px) {
-    .message {
-        top: 10%; /* Geser lebih ke atas */
-        transform: translate(-50%, 0); /* Hilangkan efek yang bikin kepotong */
-        height: auto; /* Biar ngikutin isi surat */
-        max-height: 80vh; /* Biar gak terlalu panjang */
-        overflow-y: auto; /* Scroll kalau terlalu panjang */
     }
 }
