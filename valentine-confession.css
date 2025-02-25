@@ -12,15 +12,17 @@ body {
     margin: 0;
     padding: 0;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: center;
-    min-height: 100vh;
+    height: 100%;
+    min-height: 100dvh; /* Gunakan dynamic viewport height untuk support iOS & Android */
 }
 
 .instruction {
     font-size: 1.6rem;
     color: rgba(255, 0, 0, 0.6);
-    margin-bottom: 20px;
+    margin: 20px 0;
 }
 
 .container {
@@ -29,8 +31,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 20px;
 }
 
+/* Animasi Hati */
 .heart {
     cursor: pointer;
     animation: beat 2s infinite ease-in-out;
@@ -46,6 +50,7 @@ body {
     50% { transform: scale(1.2); }
 }
 
+/* Surat */
 .message {
     display: none;
     width: 90%;
@@ -54,11 +59,14 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    max-height: 75vh;
+    height: auto;
+    max-height: 80vh;
     overflow-y: auto;
     text-align: justify;
+    position: relative;
 }
 
+/* Tombol Tutup */
 .close-btn {
     margin-top: 10px;
     padding: 10px 20px;
@@ -73,15 +81,20 @@ body {
 
 /* Optimasi Tampilan Mobile */
 @media screen and (max-width: 768px) {
+    body {
+        min-height: 100dvh; /* Dynamic viewport height biar gak kepotong di iOS */
+    }
+
     .container {
         width: 95%;
         max-width: 90vw;
+        padding: 10px;
     }
 
     .message {
         width: 100%;
         max-width: 90vw;
-        max-height: 70vh;
+        max-height: 75dvh; /* Dynamic height agar lebih fleksibel */
         padding: 15px;
     }
 
