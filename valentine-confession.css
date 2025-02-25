@@ -88,3 +88,12 @@ body {
         font-size: 16px;
     }
 }
+@media screen and (max-width: 768px) {
+    .message {
+        top: 10%; /* Geser lebih ke atas */
+        transform: translate(-50%, 0); /* Hilangkan efek yang bikin kepotong */
+        height: auto; /* Biar ngikutin isi surat */
+        max-height: 80vh; /* Biar gak terlalu panjang */
+        overflow-y: auto; /* Scroll kalau terlalu panjang */
+    }
+}
