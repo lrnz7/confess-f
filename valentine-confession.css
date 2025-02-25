@@ -11,38 +11,34 @@ body {
     text-align: center;
     margin: 0;
     padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
 }
 
 .instruction {
-    position: absolute;
     font-size: 1.6rem;
     color: rgba(255, 0, 0, 0.6);
-    top: 36%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin-bottom: 20px;
 }
 
 .container {
-    position: relative;
     width: 100%;
-    height: 100vh;
-    overflow: visible;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .heart {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    text-align: center;
-    transform: translate(-50%, -50%);
-    transition: transform 2s;
     cursor: pointer;
+    animation: beat 2s infinite ease-in-out;
 }
 
 .heart img {
     width: 80px;
     height: auto;
-    animation: beat 2s infinite ease-in-out;
 }
 
 @keyframes beat {
@@ -52,11 +48,7 @@ body {
 
 .message {
     display: none;
-    position: fixed;
-    top: 5vh;
-    left: 50%;
-    transform: translate(-50%, 0);
-    width: 80%;
+    width: 90%;
     max-width: 400px;
     background: white;
     padding: 20px;
@@ -64,6 +56,7 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     max-height: 75vh;
     overflow-y: auto;
+    text-align: justify;
 }
 
 .close-btn {
@@ -81,17 +74,14 @@ body {
 /* Optimasi Tampilan Mobile */
 @media screen and (max-width: 768px) {
     .container {
-        overflow: visible !important;
+        width: 95%;
+        max-width: 90vw;
     }
 
     .message {
-        position: fixed;
-        top: 5vh;
-        left: 50%;
-        transform: translate(-50%, 0);
-        width: 90%;
-        max-height: 75vh;
-        overflow-y: auto;
+        width: 100%;
+        max-width: 90vw;
+        max-height: 70vh;
         padding: 15px;
     }
 
