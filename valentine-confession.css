@@ -14,13 +14,14 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100dvh;
+    min-height: 100vh;
 }
 
 .instruction {
     font-size: 1.6rem;
     color: rgba(255, 0, 0, 0.6);
     margin-bottom: 20px;
+    word-spacing: normal;
 }
 
 .container {
@@ -29,7 +30,6 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 20px;
 }
 
 .heart {
@@ -55,18 +55,19 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    max-height: 75dvh;
+    max-height: 75vh;
     overflow-y: auto;
     text-align: justify;
     line-height: 1.6;
-    word-spacing: 0.1em;
+    word-spacing: normal;
 }
 
-.message h1 {
-    font-size: 24px;
-    letter-spacing: 0.05em;
+.message h2 {
+    display: block;
     text-align: center;
     margin-bottom: 10px;
+    font-size: 1.8rem;
+    font-weight: bold;
 }
 
 .close-btn {
@@ -83,29 +84,16 @@ body {
 
 /* Optimasi Tampilan Mobile */
 @media screen and (max-width: 768px) {
-    body {
-        min-height: 100dvh;
-    }
-
     .container {
         width: 95%;
         max-width: 90vw;
-        padding: 10px;
     }
 
     .message {
         width: 100%;
         max-width: 90vw;
-        max-height: 75dvh;
+        max-height: 70vh;
         padding: 15px;
-        line-height: 1.5;
-        word-spacing: 0.05em;
-    }
-
-    .message h1 {
-        font-size: 22px;
-        letter-spacing: 0.02em;
-        margin-bottom: 8px;
     }
 
     .heart img {
