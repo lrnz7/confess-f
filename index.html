@@ -65,10 +65,24 @@
         <button class="button" onclick="openLetter()">Buka Surat</button>
     </div>
 
+    <!-- Audio untuk background music -->
+    <audio id="backgroundMusic" loop>
+        <source src="blue-yungkai.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
     <script>
         function openLetter() {
             window.location.href = 'surat.html';
         }
+
+        // Auto-play lagu setelah user melakukan klik pertama
+        document.addEventListener('click', function() {
+            var audio = document.getElementById('backgroundMusic');
+            if (audio.paused) {
+                audio.play();
+            }
+        }, { once: true }); // Biar cuma perlu klik sekali
     </script>
 </body>
 </html>
