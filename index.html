@@ -21,16 +21,12 @@
 document.addEventListener("DOMContentLoaded", function() {
     var audio = document.getElementById("bg-music");
 
-    // Coba play langsung
     var playPromise = audio.play();
-    
     if (playPromise !== undefined) {
         playPromise.then(() => {
             console.log("Audio berhasil diputar otomatis.");
-        }).catch(error => {
+        }).catch(() => {
             console.log("Auto-play diblokir, nunggu interaksi user.");
-            
-            // Kalau autoplay gagal, tunggu user klik di mana saja
             document.body.addEventListener("click", function() {
                 audio.play();
             }, { once: true });
@@ -40,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <!-- Konten Surat -->
-<p class="instruction">Fifi, tolong diklik yaaa!</p>
+<p class="instruction">Fifi, klik di sini yaaa!</p>
 <div class="container">
     <div class="heart" id="heart">
         <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Love_Heart_SVG.svg" alt="Heart">
@@ -48,22 +44,25 @@ document.addEventListener("DOMContentLoaded", function() {
     <div class="message" id="message">
         <h1>Dear Firda Firnanda,</h1>
         <p>
-            Sebenernya gua udah mulai bikin surat ini beserta webnya sejak awal Februari, bertahap. Dan kalau lu baca ini sekarang, berarti gua udah berhasil nembak lu. <b>Yeah, mission accomplished!</b> Walaupun yaaa gua udah tebak bahwa endingnya 80% bakal ditolak.
+            Gua udah bikin surat dan web ini sejak awal Februari. Kalau lu baca sekarang, berarti gua udah nembak lu. <b>Mission accomplished!</b> Meski gua sadar, peluangnya cuma 20%.
         </p>
         <p>
-            Kenapa gua bilang berhasil, padahal gua sadar chance gua kecil? Karena menurut gua, menyatakan cinta itu udah pencapaian besar buat seorang laki-laki. Biasanya gua lebih milih memendam perasaan kalau menurut logika gua chance-nya gak 100%. Tapi kali ini beda—hati gua menang lawan logika gua sendiri. <i>And that's because of you.</i>
+            Biasanya gua lebih milih pendam perasaan kalau chance-nya gak 100%. Tapi kali ini beda—hati gua menang lawan logika gua sendiri. <i>And that's because of you.</i>
         </p>
         <p>
-            Lu mungkin udah tau perasaan gua selama ini. Betapa gua sayang, peduli, dan ngehargain lu. Betapa banyak effort yang gua lakuin buat lu, bahkan hal-hal yang mungkin lu gak sadar. Kenapa? <b>Because I love you.</b>
+            Lu pasti tau gua sayang dan peduli sama lu. Banyak hal gua lakuin, bahkan yang mungkin lu gak sadar bahwa gua udah ngelakuin itu demi lu. Kenapa? <b>Because I love you.</b>
         </p>
         <p>
-            Gua tau cinta gua ini penuh rintangan, gua tau peluangnya kecil. <i>But why should I let that stop me?</i> Semakin gua tahan, semakin gua gak bisa pendam. <b>The more I know about you, the deeper I fall.</b> Bahkan keburukan lu sekalipun cuma bikin gua makin sayang. Gua gak pernah anggap lu sempurna, tapi justru karena itu gua cinta lu.
+            Gua tau cinta gua ini penuh rintangan, peluangnya kecil. <i>But why should I let that stop me?</i> Makin gua kenal lu, makin gua sayang. Bahkan kekurangan lu pun bikin gua makin jatuh hati. Gua gak cari yang sempurna—gua cari lu.
         </p>
         <p>
-            Mungkin lu bukan pacar gua, tapi gua udah nganggep lu sebagai seseorang yang gua milikin dalam hati gua. Dan gua tau, lu selalu teguh dengan keputusan yang lu buat. <i>So whatever your answer is, I respect it 100%.</i> Gua cuma mau lu tau satu hal: <b>gua cinta dan sayang sama lu, apapun keputusan lu.</b> Jadi, jangan berpikir gua gabisa menghargai keputusan lu. sangat amat bisa kok, karna kebahagiaan lu adalah kebahagiaan gua juga. kalo lu merasa bahagia dengan tidak bersama gua, ya it's okay. gua akan tetap bahagia dengan apapun keputusan lu.
+            Mungkin kita gak bisa bareng lagi, tapi di hati gua, lu udah ada di sana. Dan gua tau lu selalu teguh dengan keputusan yang lu buat. <i>So whatever your answer is, I respect it 100%.</i>
         </p>
         <p>
-            Terima kasih buat semuanya. Buat setiap momen, buat setiap perjuangan lu yang mungkin gua gak tau agar bisa bersama gua selama ini. Bersama lu adalah salah satu bab paling indah dalam hidup gua, yang bakal gua kenang selamanya. <b>I'm proud to love someone as strong, beautiful, and kind as you.</b>
+            Apapun keputusan lu, gua tetap sayang. Kalau bahagia lu bukan sama gua, gua tetap bahagia buat lu. <i>Because love is not just about having, but also about letting be.</i>
+        </p>
+        <p>
+            Terima kasih buat semua momen yang kita jalanin. Bareng lu adalah salah satu bab paling indah dalam hidup gua. <b>I'm proud to love someone as strong, beautiful, and kind as you.</b>
         </p>
         <p style="text-align: center; font-size: 18px;">
             <i>Ich liebe dich, schatzi. ❤️</i>
