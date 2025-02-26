@@ -3,76 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Valentine Confession</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="valentine-confession.css">
+    <title>Surat untuk Fifi</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Sacramento&display=swap');
+        
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            background: linear-gradient(to bottom, #ffdde1, #ee9ca7);
+            text-align: center;
+            font-family: 'Sacramento', cursive;
+            color: #fff;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        
+        .heart {
+            font-size: 4rem;
+            animation: pulse 1.5s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            background-color: #ff6b81;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        
+        .button:hover {
+            background-color: #ff4757;
+        }
+    </style>
 </head>
 <body>
-
-<!-- Audio Background -->
-<audio id="bg-music" loop>
-    <source src="blue-yungkai.mp3" type="audio/mpeg">
-    Browser lu gak support audio ini.
-</audio>
-
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-    var audio = document.getElementById("bg-music");
-
-    var playPromise = audio.play();
-    if (playPromise !== undefined) {
-        playPromise.then(() => {
-            console.log("Audio berhasil diputar otomatis.");
-        }).catch(() => {
-            console.log("Auto-play diblokir, nunggu interaksi user.");
-            document.body.addEventListener("click", function() {
-                audio.play();
-            }, { once: true });
-        });
-    }
-});
-</script>
-
-<!-- Konten Surat -->
-<p class="instruction">Fifi, klik di sini yaaa!</p>
-<div class="container">
-    <div class="heart" id="heart">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Love_Heart_SVG.svg" alt="Heart">
+    <div class="container">
+        <h1>Fifi, klik di sini ya</h1>
+        <div class="heart">❤️</div>
+        <button class="button" onclick="openLetter()">Buka Surat</button>
     </div>
-    <div class="message" id="message">
-        <h1>Dear Firda Firnanda,</h1>
-        <p>
-            Gua udah bikin surat dan web ini sejak awal Februari. Kalau lu baca sekarang, berarti gua udah nembak lu. <b>Mission accomplished!</b> Meski gua sadar, peluangnya cuma 20%.
-        </p>
-        <p>
-            Biasanya gua lebih milih pendam perasaan kalau chance-nya gak 100%. Tapi kali ini beda—hati gua menang lawan logika gua sendiri. <i>And that's because of you.</i>
-        </p>
-        <p>
-            Lu pasti tau gua sayang dan peduli sama lu. Banyak hal gua lakuin, bahkan yang mungkin lu gak sadar bahwa gua udah ngelakuin itu demi lu. Kenapa? <b>Because I love you.</b>
-        </p>
-        <p>
-            Gua tau cinta gua ini penuh rintangan, peluangnya kecil. <i>But why should I let that stop me?</i> Makin gua kenal lu, makin gua sayang. Bahkan kekurangan lu pun bikin gua makin jatuh hati. Gua gak cari yang sempurna—gua cari lu.
-        </p>
-        <p>
-            Mungkin kita gak bisa bareng lagi, tapi di hati gua, lu udah ada di sana. Dan gua tau lu selalu teguh dengan keputusan yang lu buat. <i>So whatever your answer is, I respect it 100%.</i>
-        </p>
-        <p>
-            Apapun keputusan lu, gua tetap sayang. Kalau bahagia lu bukan sama gua, gua tetap bahagia buat lu. <i>Because love is not just about having, but also about letting be.</i>
-        </p>
-        <p>
-            Terima kasih buat semua momen yang kita jalanin. Bareng lu adalah salah satu bab paling indah dalam hidup gua. <b>I'm proud to love someone as strong, beautiful, and kind as you.</b>
-        </p>
-        <p style="text-align: center; font-size: 18px;">
-            <i>Ich liebe dich, schatzi. ❤️</i>
-        </p>
-        <button class="close-btn">Close</button>
-    </div>  
-</div>
 
-<script src="jquery.js"></script>
-<script src="valentine-confession.js"></script>
-
+    <script>
+        function openLetter() {
+            window.location.href = 'surat.html';
+        }
+    </script>
 </body>
 </html>
